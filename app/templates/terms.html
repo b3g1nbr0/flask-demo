@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Terms of Service | Prompt Generator{% endblock %}
+{% block content %}
+<h2>Syarat & Ketentuan Layanan</h2>
+<ul>
+  <li>Aplikasi terbuka untuk penggunaan publik non-komersial</li>
+  <li>Pengguna bertanggung jawab atas konten prompt yang dihasilkan</li>
+  <li>Tidak diperkenankan menggunakan aplikasi untuk spam atau pelanggaran hukum</li>
+  <li>Tidak ada jaminan hasil prompt mutlak akurat</li>
+  <li>Perubahan layanan/penghentian sewaktu-waktu dapat dilakukan tanpa pemberitahuan</li>
+</ul>
+<p>Konfirmasi dan pertanyaan lebih lanjut? Hubungi kami di <a href="{{ url_for('main.contact') }}">Contact</a>.</p>
+{% endblock %}

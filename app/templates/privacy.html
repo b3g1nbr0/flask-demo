@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Privacy Policy | Prompt Generator{% endblock %}
+{% block content %}
+<h2>Kebijakan Privasi</h2>
+<p>Kami menghargai privasi dan keamanan data Anda. Tidak ada data sensitif/form yang disimpan secara permanen di aplikasi ini.<br>
+Semua input hanya diproses saat submit dan tidak diteruskan ke pihak ketiga.</p>
+<ul>
+  <li>Tidak ada pelacakan pengguna/iklan</li>
+  <li>Tidak menyimpan email, nama, maupun isi prompt</li>
+  <li>Data hanya diolah lokal oleh server Flask selama sesi aktif</li>
+</ul>
+<p>Jika ada pertanyaan lebih lanjut, silakan hubungi kami di halaman <a href="{{ url_for('main.contact') }}">Contact</a>.</p>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Prompt Generator{% endblock %}
+{% block content %}
+<h2 class="mb-4">Generator Prompt AI</h2>
+<form method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.tujuan.label(class="form-label fw-semibold") }}
+        {{ form.tujuan(class="form-control", placeholder="Contoh: Membuat ringkasan materi kuliah") }}
+        {% for error in form.tujuan.errors %}<div class="text-danger">{{ error }}</div>{% endfor %}
+    </div>
+    <div class="mb-3">
+        {{ form.bahasa.label(class="form-label fw-semibold") }}
+        {{ form.bahasa(class="form-select") }}
+        {% for error in form.bahasa.errors %}<div class="text-danger">{{ error }}</div>{% endfor %}
+    </div>
+    <div class="mb-3">
+        {{ form.gaya.label(class="form-label fw-semibold") }}
+        {{ form.gaya(class="form-select") }}
+        {% for error in form.gaya.errors %}<div class="text-danger">{{ error }}</div>{% endfor %}
+    </div>
+    <div class="mb-3">
+        {{ form.detail.label(class="form-label fw-semibold") }}
+        {{ form.detail(class="form-control", rows=4, placeholder="Tulis detail permintaan Anda di sini...") }}
+        {% for error in form.detail.errors %}<div class="text-danger">{{ error }}</div>{% endfor %}
+    </div>
+    <button type="submit" class="btn btn-success">Generate</button>
+</form>
+
+{% if prompt %}
+<hr>
+<div class="card bg-light mt-4">
+    <div class="card-header d-flex align-items-center">
+        <strong>Prompt Terstruktur</strong>
+        <button id="copy-btn" class="btn btn-outline-secondary btn-sm ms-auto">Copy</button>
+    </div>
+    <div class="card-body">
+        <pre class="mb-0" id="prompt-area">{{ prompt }}</pre>
+    </div>
+</div>
+<script>
+document.getElementById('copy-btn').onclick = function() {
+    const text = document.getElementById('prompt-area').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      alert('Prompt berhasil disalin ke clipboard!');
+    });
+};
+</script>
+{% endif %}
+{% endblock %}

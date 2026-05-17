@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Home | Prompt Generator{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1 class="display-4">Prompt Generator Web</h1>
+  <p class="lead">Aplikasi profesional pembuat prompt AI yang mudah, detail, dan cocok untuk semua kalangan.</p>
+  <a href="{{ url_for('main.generator') }}" class="btn btn-primary btn-lg mt-3">Coba Generator Prompt</a>
+</div>
+<div class="row mt-5 mb-2">
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Cepat & Mudah</h5>
+        <p class="card-text">Isi beberapa detail, klik generate, siap pakai untuk ChatGPT, Copilot, dan LLM lainnya.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Terstruktur & Profesional</h5>
+        <p class="card-text">Format prompt siap kerja, lengkap dengan gaya & detail, hasil lebih maksimal.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Untuk Semua Kalangan</h5>
+        <p class="card-text">Pelajar, mahasiswa, pekerja, kreator, siapa saja bisa gunakan tanpa ribet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

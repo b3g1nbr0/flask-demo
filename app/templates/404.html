@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}404 Not Found | Prompt Generator{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-2 mb-4">404</h1>
+    <h3 class="mb-4">Oops! Halaman tidak ditemukan</h3>
+    <p class="lead mb-4">Halaman yang Anda cari tidak tersedia atau telah dipindahkan.</p>
+    <a href="{{ url_for('main.home') }}" class="btn btn-primary">Kembali ke Beranda</a>
+</div>
+{% endblock %}
